@@ -13,6 +13,7 @@
 		FC6AF2911AFD59A7003BAE37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC6AF2901AFD59A7003BAE37 /* Images.xcassets */; };
 		FC6AF2941AFD59A7003BAE37 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6AF2921AFD59A7003BAE37 /* LaunchScreen.xib */; };
 		FC6AF2A01AFD59A7003BAE37 /* textViewSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AF29F1AFD59A7003BAE37 /* textViewSampleTests.swift */; };
+		FC6AF2AA1AFD66EE003BAE37 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AF2A91AFD66EE003BAE37 /* TextCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		FC6AF2991AFD59A7003BAE37 /* textViewSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = textViewSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6AF29E1AFD59A7003BAE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6AF29F1AFD59A7003BAE37 /* textViewSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textViewSampleTests.swift; sourceTree = "<group>"; };
+		FC6AF2A91AFD66EE003BAE37 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				FC6AF2891AFD59A7003BAE37 /* AppDelegate.swift */,
 				FC6AF28B1AFD59A7003BAE37 /* ViewController.swift */,
+				FC6AF2A91AFD66EE003BAE37 /* TextCell.swift */,
 				FC6AF28D1AFD59A7003BAE37 /* Main.storyboard */,
 				FC6AF2901AFD59A7003BAE37 /* Images.xcassets */,
 				FC6AF2921AFD59A7003BAE37 /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6AF28C1AFD59A7003BAE37 /* ViewController.swift in Sources */,
+				FC6AF2AA1AFD66EE003BAE37 /* TextCell.swift in Sources */,
 				FC6AF28A1AFD59A7003BAE37 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

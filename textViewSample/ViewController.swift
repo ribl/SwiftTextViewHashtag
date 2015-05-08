@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     var lastTextViewHeight:CGFloat = 0.0
+    
+    var messages:[String] = []
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var toolbarBottom: NSLayoutConstraint!
@@ -20,10 +22,12 @@ class ViewController: UIViewController {
     
     @IBAction func sendButton(sender: AnyObject) {
         textView.endEditing(true)
+        messages.append(textView.text)
         // clear the text
         textView.text = ""
         // and manually trigger the delegate method
         self.textViewDidChange(textView)
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -86,11 +90,12 @@ extension ViewController {
 extension ViewController : UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return messages.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! TextCell
+        cell.textView.text = messages[indexPath.row]
         return cell
     }
     
