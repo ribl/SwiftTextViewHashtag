@@ -32,11 +32,58 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="XME-2p-g7x"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2W-ao-qzJ" userLabel="fake toolbar">
+                                <rect key="frame" x="0.0" y="554" width="600" height="46"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IJ-SV-Gs6">
+                                        <rect key="frame" x="5" y="3" width="536" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="iHb-1g-eFp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lej-Yy-2Jn">
+                                        <rect key="frame" x="546" y="8" width="36" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="6Cu-zC-dUh"/>
+                                            <constraint firstAttribute="width" constant="36" id="SR8-kz-sI9"/>
+                                        </constraints>
+                                        <state key="normal" title="Send">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6IJ-SV-Gs6" firstAttribute="leading" secondItem="y2W-ao-qzJ" secondAttribute="leading" constant="5" id="6mh-Zc-bNK"/>
+                                    <constraint firstAttribute="height" constant="50" id="SuW-dw-gEH"/>
+                                    <constraint firstAttribute="bottom" secondItem="6IJ-SV-Gs6" secondAttribute="bottom" constant="3" id="dUv-Mh-Vrg"/>
+                                    <constraint firstAttribute="trailing" secondItem="lej-Yy-2Jn" secondAttribute="trailing" constant="18" id="hVo-nv-bUl"/>
+                                    <constraint firstAttribute="centerY" secondItem="lej-Yy-2Jn" secondAttribute="centerY" id="mxI-T7-FP4"/>
+                                    <constraint firstItem="6IJ-SV-Gs6" firstAttribute="top" secondItem="y2W-ao-qzJ" secondAttribute="top" constant="3" id="spj-OG-OhO"/>
+                                    <constraint firstItem="lej-Yy-2Jn" firstAttribute="leading" secondItem="6IJ-SV-Gs6" secondAttribute="trailing" constant="5" id="tdF-S4-TUy"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SuW-dw-gEH"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="y2W-ao-qzJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="83b-f2-360"/>
                             <constraint firstItem="Ore-rp-Yk1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ldp-nl-6uX"/>
                             <constraint firstAttribute="trailing" secondItem="Ore-rp-Yk1" secondAttribute="trailing" id="Vya-RI-Fyc"/>
+                            <constraint firstAttribute="trailing" secondItem="y2W-ao-qzJ" secondAttribute="trailing" id="Yqt-GR-Vtd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y2W-ao-qzJ" secondAttribute="bottom" id="oMG-u7-3QM"/>
                             <constraint firstItem="Ore-rp-Yk1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="smb-Uy-aZy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ore-rp-Yk1" secondAttribute="bottom" id="uze-lI-Vkh"/>
                         </constraints>
