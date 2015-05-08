@@ -101,6 +101,27 @@ extension ViewController : UITableViewDataSource {
     
 }
 
+// MARK: - UITableViewDelegate methods
+
+extension ViewController : UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        // type cast to NSString to get additional methods
+        let myString: NSString = messages[indexPath.row] as NSString
+        // label height depends on font
+        let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(17.0)]
+        // hard-coding string width as 320 (width of screen) minus 22 (the left and right margins)
+        let stringWidth:CGFloat = UIScreen.mainScreen().bounds.width
+        // hard-coding a really big number that exceeds the screen height
+        let infiniteHeight:CGFloat = 1600
+        let temporarySize = CGSizeMake(stringWidth, infiniteHeight)
+        let rect:CGRect = myString.boundingRectWithSize(temporarySize, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
+        println("rect.height :: \(rect.height)")
+        return rect.height + 10
+    }
+    
+}
+
 // MARK: - UITextViewDelegate methods
 
 extension ViewController : UITextViewDelegate {
