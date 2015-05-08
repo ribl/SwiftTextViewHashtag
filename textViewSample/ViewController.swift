@@ -95,7 +95,7 @@ extension ViewController : UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! TextCell
-        cell.textView.text = messages[indexPath.row]
+        cell.setCellText(messages[indexPath.row])
         return cell
     }
     
@@ -109,15 +109,14 @@ extension ViewController : UITableViewDelegate {
         // type cast to NSString to get additional methods
         let myString: NSString = messages[indexPath.row] as NSString
         // label height depends on font
-        let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(17.0)]
-        // hard-coding string width as 320 (width of screen) minus 22 (the left and right margins)
-        let stringWidth:CGFloat = UIScreen.mainScreen().bounds.width
+        let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(18.0)]
+        let stringWidth:CGFloat = UIScreen.mainScreen().bounds.width - 20
         // hard-coding a really big number that exceeds the screen height
         let infiniteHeight:CGFloat = 1600
         let temporarySize = CGSizeMake(stringWidth, infiniteHeight)
         let rect:CGRect = myString.boundingRectWithSize(temporarySize, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
         println("rect.height :: \(rect.height)")
-        return rect.height + 10
+        return rect.height + 15
     }
     
 }
@@ -143,6 +142,19 @@ extension ViewController : UITextViewDelegate {
             // to account for a potential new line
             textviewHeight.constant = newSize.height + 7.0
         }
+    }
+ 
+    func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
+        
+        if URL.scheme == "hash" {
+            let alertView = UIAlertView()
+            alertView.title = "hash tag detected"
+            alertView.message = "\(URL.resourceSpecifier!)"
+            alertView.addButtonWithTitle("Ok")
+            alertView.show()
+        }
+        
+        return true
     }
     
 }
