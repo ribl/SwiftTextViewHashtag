@@ -11,18 +11,49 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var toolbarBottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        keyboardHeightRegisterNotifications()
     }
+    
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+// all this just to move the keyboard up and down.
+extension ViewController {
+    
+    /// register keyboard notifications to shift the scrollview content insets
+    func keyboardHeightRegisterNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
-
-
+    
+    /// just pass true or false if you're shifting the keyboard up or down
+    func keyboardWillShow(notification: NSNotification) {
+        adjustInsetForKeyboardShow(true, notification: notification)
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        adjustInsetForKeyboardShow(false, notification: notification)
+    }
+    
+    /// helper method.  shift the scrollview up or down by the dynamic height of the keyboard.
+    func adjustInsetForKeyboardShow(show: Bool, notification: NSNotification) {
+        // pad it for the sake of the custom toolbar
+        let adjustmentHeight = getKeyboardHeight(notification) * (show ? 1 : 0)
+        toolbarBottom.constant = adjustmentHeight
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat{
+        // == userInfo || {}
+        let userInfo = notification.userInfo ?? [:]
+        // CGRect wrapped in a NSValue
+        let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        return CGRectGetHeight(keyboardFrame)
+    }
+    
 }
 
 extension ViewController : UITableViewDataSource {

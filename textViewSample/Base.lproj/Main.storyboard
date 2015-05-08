@@ -83,13 +83,14 @@
                             <constraint firstItem="Ore-rp-Yk1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ldp-nl-6uX"/>
                             <constraint firstAttribute="trailing" secondItem="Ore-rp-Yk1" secondAttribute="trailing" id="Vya-RI-Fyc"/>
                             <constraint firstAttribute="trailing" secondItem="y2W-ao-qzJ" secondAttribute="trailing" id="Yqt-GR-Vtd"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y2W-ao-qzJ" secondAttribute="bottom" id="oMG-u7-3QM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y2W-ao-qzJ" secondAttribute="bottom" id="oMG-u7-3QM" userLabel="toolbar bottom constraint"/>
                             <constraint firstItem="Ore-rp-Yk1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="smb-Uy-aZy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ore-rp-Yk1" secondAttribute="bottom" id="uze-lI-Vkh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Ore-rp-Yk1" id="TqS-51-9Ji"/>
+                        <outlet property="toolbarBottom" destination="oMG-u7-3QM" id="PEP-hS-oqO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
