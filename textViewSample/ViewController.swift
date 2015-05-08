@@ -12,6 +12,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var toolbarBottom: NSLayoutConstraint!
+    @IBOutlet weak var textView: UITextView!
+    
+    @IBAction func sendButton(sender: AnyObject) {
+        textView.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +49,16 @@ extension ViewController {
         // pad it for the sake of the custom toolbar
         let adjustmentHeight = getKeyboardHeight(notification) * (show ? 1 : 0)
         toolbarBottom.constant = adjustmentHeight
+        // animate the constraint change.  this is how to do it.
+        UIView.animateWithDuration(0.5,
+            delay: 0.0,
+            options: .CurveEaseInOut,
+            animations: {
+                // animate the constraint change
+                self.view.layoutIfNeeded()
+            },
+            completion: nil
+        )
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat{

@@ -58,6 +58,9 @@
                                         <state key="normal" title="Send">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NM7-9v-eFI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,6 +93,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Ore-rp-Yk1" id="TqS-51-9Ji"/>
+                        <outlet property="textView" destination="6IJ-SV-Gs6" id="a9S-l5-cq1"/>
                         <outlet property="toolbarBottom" destination="oMG-u7-3QM" id="PEP-hS-oqO"/>
                     </connections>
                 </viewController>
