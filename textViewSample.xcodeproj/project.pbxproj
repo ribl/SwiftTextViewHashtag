@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC32ED3A1B0FB23100FFBFF6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC32ED391B0FB23100FFBFF6 /* UITextField+Extension.swift */; };
 		FC6AF28A1AFD59A7003BAE37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AF2891AFD59A7003BAE37 /* AppDelegate.swift */; };
 		FC6AF28C1AFD59A7003BAE37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6AF28B1AFD59A7003BAE37 /* ViewController.swift */; };
 		FC6AF28F1AFD59A7003BAE37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC6AF28D1AFD59A7003BAE37 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC32ED391B0FB23100FFBFF6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		FC6AF2841AFD59A7003BAE37 /* textViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = textViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6AF2881AFD59A7003BAE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC6AF2891AFD59A7003BAE37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				FC6AF2891AFD59A7003BAE37 /* AppDelegate.swift */,
 				FC6AF28B1AFD59A7003BAE37 /* ViewController.swift */,
 				FC6AF2A91AFD66EE003BAE37 /* TextCell.swift */,
+				FC32ED391B0FB23100FFBFF6 /* UITextField+Extension.swift */,
 				FC6AF28D1AFD59A7003BAE37 /* Main.storyboard */,
 				FC6AF2901AFD59A7003BAE37 /* Images.xcassets */,
 				FC6AF2921AFD59A7003BAE37 /* LaunchScreen.xib */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC6AF28C1AFD59A7003BAE37 /* ViewController.swift in Sources */,
+				FC32ED3A1B0FB23100FFBFF6 /* UITextField+Extension.swift in Sources */,
 				FC6AF2AA1AFD66EE003BAE37 /* TextCell.swift in Sources */,
 				FC6AF28A1AFD59A7003BAE37 /* AppDelegate.swift in Sources */,
 			);
@@ -415,6 +419,7 @@
 				FC6AF2A51AFD59A7003BAE37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC6AF2A61AFD59A7003BAE37 /* Build configuration list for PBXNativeTarget "textViewSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				FC6AF2A81AFD59A7003BAE37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
