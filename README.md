@@ -105,6 +105,6 @@ Intercept the URL click and check for your fake URL scheme.
 
 * A much more mature [Objective-C library](https://github.com/SebastienThiebaud/STTweetLabel) for hashtag detection
 * A [swift implementation](https://yeti.co/blog/hashtags-and-mentions/) of hashtags and mentions.  I wish this was available when I first implemented hashtags.  I won't be offended if you use it!  
-* I used [this](http://kishikawakatsumi.hatenablog.com/entry/20130605/1370370925) to initially figure out my approach
+* I used [this](http://kishikawakatsumi.hatenablog.com/entry/20130605/1370370925) to initially figure out my approach.  Just click "translate from japanese" on the top.
 * I used [this](http://stackoverflow.com/questions/11547919/check-if-string-contains-a-hashtag-and-then-change-hashtag-color) to figure out how to use `NSMutableAttributedString`
 * [Ray Wenderlich Scroll View](http://www.raywenderlich.com/video-tutorials#swiftscrollview) video series helped me understand keyboard movement.  It's tricky!  Video subscription is pay per month, but worth it.
