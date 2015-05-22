@@ -27,7 +27,7 @@ The overall process goes something like this:
 * Create a fake URL using a fake URL scheme.  For example, `fakeScheme:helloWorld`
 * Associate this fake URL with the hashtag word.  `NSMutableAttributedString` has methods to accomplish this.
 
-Here's the code:
+Here's the code (see textCell.swift):
 
 ```
     @IBOutlet weak var textView: UITextView!
