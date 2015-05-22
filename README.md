@@ -11,7 +11,7 @@ The approach used here is to add an attribute to hashtag words, much like an "hr
 
 ### URL detection
 
-The first step is to detect URLs.  
+Before doing anything, we need to detect URLs.  
 * In the storyboard, make sure the TextView can detect *Links*
 * For the above to work, de-select *Editable*
 
