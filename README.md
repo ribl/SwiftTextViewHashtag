@@ -15,7 +15,7 @@ Before doing anything, we need to detect URLs.
 * In the storyboard, make sure the TextView can detect *Links*
 * For the above to work, de-select *Editable*
 
-At this point, URLs in the textview will open links in the Safari app.
+At this point, URLs in the textview will open in the Safari app.
 
 ### Add link attributes to the hashtags
 
