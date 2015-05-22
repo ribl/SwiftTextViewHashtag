@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     var lastTextViewHeight:CGFloat = 0.0
     
-    var messages:[String] = ["regular text", "#helloWorld <- click on it to see an alert", "@mention not implemented yet", "add your own text below"]
+    var messages:[String] = ["regular text, nothing to see here", "#ribl <- click on it to see an alert", "@mention not implemented yet", "regular urls are clickable http://ribl.co", "add your own text below"]
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var toolbarBottom: NSLayoutConstraint!
