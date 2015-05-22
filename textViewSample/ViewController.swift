@@ -116,7 +116,7 @@ extension ViewController : UITableViewDelegate {
         let temporarySize = CGSizeMake(stringWidth, infiniteHeight)
         let rect:CGRect = myString.boundingRectWithSize(temporarySize, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
         println("rect.height :: \(rect.height)")
-        return rect.height + 15
+        return rect.height + 30
     }
     
 }
