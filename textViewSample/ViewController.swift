@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // listen for the keyboard going up and down
         keyboardHeightRegisterNotifications()
     }
     
@@ -58,12 +58,15 @@ extension ViewController {
         adjustInsetForKeyboardShow(false, notification: notification)
     }
     
-    /// helper method.  shift the scrollview up or down by the dynamic height of the keyboard.
+    /// consolidate the keyboard movement logic into one method, and just pass a boolean for up or down.
     func adjustInsetForKeyboardShow(show: Bool, notification: NSNotification) {
-        // pad it for the sake of the custom toolbar
-        let adjustmentHeight = getKeyboardHeight(notification) * (show ? 1 : 0)
-        toolbarBottom.constant = adjustmentHeight
-        // animate the constraint change.  this is how to do it.
+        // some implementations out there use -1 and 1 to move it up or down. 
+        // debugging is a little easier if you use -1 and 0 instead.
+        toolbarBottom.constant = getKeyboardHeight(notification) * (show ? 1 : 0)
+        // normally, the constraint change is updated immediately.
+        // by simply added UIView.animateWithDuration along with a layoutIfNeeded(),
+        // the constraint change will happen in the animation.
+        // the animation settings below sort of match the keyboard animation
         UIView.animateWithDuration(0.5,
             delay: 0.0,
             options: .CurveEaseInOut,
@@ -79,6 +82,9 @@ extension ViewController {
         // == userInfo || {}
         let userInfo = notification.userInfo ?? [:]
         // CGRect wrapped in a NSValue
+        // Make sure you use UIKeyboardFrameEndUserInfoKey, NOT UIKeyboardFrameBeginUserInfoKey
+        // "End" is good.  "Begin" is bad.  
+        // To test, switch keyboards and make sure the heights are correct.
         let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         return CGRectGetHeight(keyboardFrame)
     }
@@ -106,6 +112,9 @@ extension ViewController : UITableViewDataSource {
 extension ViewController : UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        // set the height of the row based on the text height.  
+        // TODO: there's probably a better way to do this.
+        
         // type cast to NSString to get additional methods
         let myString: NSString = messages[indexPath.row] as NSString
         // label height depends on font
@@ -115,7 +124,6 @@ extension ViewController : UITableViewDelegate {
         let infiniteHeight:CGFloat = 1600
         let temporarySize = CGSizeMake(stringWidth, infiniteHeight)
         let rect:CGRect = myString.boundingRectWithSize(temporarySize, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
-        println("rect.height :: \(rect.height)")
         return rect.height + 30
     }
     
@@ -125,7 +133,7 @@ extension ViewController : UITableViewDelegate {
 
 extension ViewController : UITextViewDelegate {
     
-    // increase the height of the textview as the
+    // increase the height of the textview as the user types
     func textViewDidChange(textView: UITextView){
         // hide placeholder text
         placeholderText.hidden = !textView.text.isEmpty
@@ -146,9 +154,11 @@ extension ViewController : UITextViewDelegate {
  
     func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
         
+        // check for our fake URL scheme hash:helloWorld
         if URL.scheme == "hash" {
             let alertView = UIAlertView()
             alertView.title = "hash tag detected"
+            // get a handle on the payload
             alertView.message = "\(URL.resourceSpecifier!)"
             alertView.addButtonWithTitle("Ok")
             alertView.show()
