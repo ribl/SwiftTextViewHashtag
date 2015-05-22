@@ -27,7 +27,7 @@ The overall process goes something like this:
 * Create a fake URL using a fake URL scheme.  For example, `fakeScheme:helloWorld`
 * Associate this fake URL with the hashtag word.  `NSMutableAttributedString` has methods to accomplish this.
 
-Here's the code: [textCell.swift](https://github.com/ribl/SwiftTextViewHashtag/blob/master/textViewSample/TextCell.swift)
+Here's the [code](https://github.com/ribl/SwiftTextViewHashtag/blob/master/textViewSample/UITextField%2BExtension.swift#L13)
 
 ### Clicking on hashtags
 
